@@ -1,0 +1,35 @@
+#  Voice Recognition project
+import speech_recognition as sr
+import pyaudio
+sr.__version__
+'3.8.1'
+
+# Function recognize_speech_for_mic:
+# Initialize recognizer
+# Open microphone as source
+
+# Initialize recognizer
+r = sr.Recognizer()
+
+def recognize_speech_from_mic():
+    """Recognizes the prerecored audio file and returns the speech
+    """
+
+    # Load the prerecorded audio file
+    with sr.AudioFile("/Users/kezia/pythonproject1/speech recognition proj/harvard.wav") as source: # opening microphone as a source
+        audio = r.record(source)
+
+    try:
+        # Recognize the audio using Google's recognition service
+        print("Listening...")
+        text = r.recognize_google(audio) # Google Web Speech API
+        print("You said:" + text)
+    except sr.UnknownValueError:
+        print("Sorry, I didn't catch that. I couldn't understand the audio.")
+    except sr.RequestError:
+        print("There was an issue with the recognition sercice.")
+        return None
+
+# Run the function if the script is executed directly
+    if __name__ == "__main__":
+        return recognize_speech_from_mic()
