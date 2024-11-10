@@ -12,7 +12,7 @@ Recognize the audio using the Google's recognition service
 Run the function
 
 # Steps in progress:
-- Make sure the prerecorded harvard.wav audio file is in the right format on Pycharm to correctly upload the audio file.
+- Make sure the prerecorded harvard.wav audio file is uploaded.
 
 - Place the audio in the project directory
 
